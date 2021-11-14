@@ -6,10 +6,17 @@ void Game::initVariables()
 	this->window = nullptr;
 }
 
+void Game::initParams(int windowHeight, int windowWidth, int squareSize)
+{
+	this->windowHeight = windowHeight;
+	this->windowWidth = windowWidth;
+	this->squareSize = squareSize;
+}
+
 void Game::initWindow()
 {
-	this->videoMode.height = 480;
-	this->videoMode.width = 640;
+	this->videoMode.height = this->windowHeight;
+	this->videoMode.width = this->windowWidth;
 	this->window = new RenderWindow(this->videoMode, "C++/SFML Project", Style::Titlebar | Style::Close);
 
 	this->window->setFramerateLimit(144);
@@ -20,7 +27,7 @@ void Game::initEnemies()
 {
 	this->enemy.setPosition(10.f, 10.f);
 
-	this->enemy.setSize(Vector2f(100.f, 100.f));
+	this->enemy.setSize(Vector2f(this->squareSize,this->squareSize));
 	this->enemy.setScale(Vector2f(0.5f, 0.5f));
 	this->enemy.setFillColor(Color(176, 5, 46));
 	this->enemy.setOutlineColor(Color::Black);
@@ -34,8 +41,8 @@ void Game::initEnemies()
 
 Game::Game() {
 	this->initVariables();
-	this->initWindow();
-	this->initEnemies();
+	//this->initWindow();
+	//this->initEnemies();
 }
 
 Game::~Game() {
@@ -83,8 +90,8 @@ void Game::update()
 
 	//std::cout << "Mause pos: " << sf::Mouse::getPosition(*this->window).x << " " << sf::Mouse::getPosition(*this->window).y << "\n";
 
-	int mauseX = sf::Mouse::getPosition(*this->window).x - 25;
-	int mauseY = sf::Mouse::getPosition(*this->window).y - 25;
+	int mauseX = sf::Mouse::getPosition(*this->window).x - this->squareSize / 4;
+	int mauseY = sf::Mouse::getPosition(*this->window).y - this->squareSize / 4;
 
 	this->setEnemyPosition(mauseX, mauseY);
 }
@@ -101,6 +108,7 @@ void Game::render()
 }
 
 
+
 void Game::setEnemyPosition(int x, int y)
 {
 	/*if (x >= 0 && x <= 590 && y >= 0 && y <= 430)
@@ -114,18 +122,18 @@ void Game::setEnemyPosition(int x, int y)
 	{
 		x = 0;
 	}
-	else if (x > 590)
+	else if (x > this->windowWidth - this->squareSize / 2)
 	{
-		x = 590;
+		x = this->windowWidth - this->squareSize / 2;
 	}
 
 	if (y < 0)
 	{
 		y = 0;
 	}
-	else if (y > 430)
+	else if (y > this->windowHeight - this->squareSize / 2)
 	{
-		y = 430;
+		y = this->windowHeight - this->squareSize / 2;
 	}
 
 	this->enemy.setPosition(x, y);
