@@ -10,19 +10,19 @@ int main()
 
     Game game;
 
-    int windowW;
-    int windowH;
-    int squareS;
+    int windowW = 640;
+    int windowH = 480;
+    int squareS = 100;
     int frameRate;
 
-    std::cout << "Enter width of window: ";
-    std::cin >> windowW;
+    //std::cout << "Enter width of window: ";
+    //std::cin >> windowW;
 
-    std::cout << "Enter height of window: ";
-    std::cin >> windowH;
+    //std::cout << "Enter height of window: ";
+    //std::cin >> windowH;
 
-    std::cout << "Enter size of square: ";
-    std::cin >> squareS;
+    //std::cout << "Enter size of square: ";
+    //std::cin >> squareS;
     
     std::cout << "Enter frame rate: ";
     std::cin >> frameRate;
