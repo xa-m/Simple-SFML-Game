@@ -14,6 +14,7 @@ private:
 	int windowHeight;
 	int windowWidth;
 	int squareSize;
+	int frameRate;
 
 	// Window
 	RenderWindow* window;
@@ -45,7 +46,7 @@ public:
 	void update();
 	void render();
 
-	void initParams(int windowHeight, int windowWidth, int squareSize);
+	void initParams(int windowHeight, int windowWidth, int squareSize, int frameRate);
 
 };
 

@@ -13,6 +13,7 @@ int main()
     int windowW;
     int windowH;
     int squareS;
+    int frameRate;
 
     std::cout << "Enter width of window: ";
     std::cin >> windowW;
@@ -22,11 +23,14 @@ int main()
 
     std::cout << "Enter size of square: ";
     std::cin >> squareS;
+    
+    std::cout << "Enter frame rate: ";
+    std::cin >> frameRate;
 
 
 
 
-    game.initParams(windowH, windowW, squareS);
+    game.initParams(windowH, windowW, squareS, frameRate);
     game.initWindow();
     game.initEnemies();
     // Game Loop

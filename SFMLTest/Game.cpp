@@ -6,11 +6,12 @@ void Game::initVariables()
 	this->window = nullptr;
 }
 
-void Game::initParams(int windowHeight, int windowWidth, int squareSize)
+void Game::initParams(int windowHeight, int windowWidth, int squareSize, int frameRate)
 {
 	this->windowHeight = windowHeight;
 	this->windowWidth = windowWidth;
 	this->squareSize = squareSize;
+	this->frameRate = frameRate;
 }
 
 void Game::initWindow()
@@ -19,7 +20,7 @@ void Game::initWindow()
 	this->videoMode.width = this->windowWidth;
 	this->window = new RenderWindow(this->videoMode, "C++/SFML Project", Style::Titlebar | Style::Close);
 
-	this->window->setFramerateLimit(144);
+	this->window->setFramerateLimit(this->frameRate);
 }
 
 
