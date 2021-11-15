@@ -112,10 +112,7 @@ void Game::render()
 
 void Game::setEnemyPosition(int x, int y)
 {
-	/*if (x >= 0 && x <= 590 && y >= 0 && y <= 430)
-	{
-		this->enemy.setPosition(x, y);
-	}*/
+	
 
 	
 
