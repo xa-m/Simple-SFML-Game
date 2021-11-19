@@ -24,6 +24,7 @@ int main()
     //std::cout << "Enter size of square: ";
     //std::cin >> squareS;
     
+    std::cout << "0 for maximum avalible frames per second" << std::endl;
     std::cout << "Enter frame rate: ";
     std::cin >> frameRate;
 
