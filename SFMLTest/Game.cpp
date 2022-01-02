@@ -94,6 +94,7 @@ void Game::update()
 	int mauseX = sf::Mouse::getPosition(*this->window).x - this->squareSize / 4;
 	int mauseY = sf::Mouse::getPosition(*this->window).y - this->squareSize / 4;
 
+
 	this->setEnemyPosition(mauseX, mauseY);
 }
 
@@ -112,10 +113,6 @@ void Game::render()
 
 void Game::setEnemyPosition(int x, int y)
 {
-	
-
-	
-
 	if (x < 0)
 	{
 		x = 0;

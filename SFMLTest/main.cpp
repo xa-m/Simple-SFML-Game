@@ -6,47 +6,59 @@ using namespace sf;
 int main()
 {
 
-    // Init game engine
+	// Init game engine
 
-    Game game;
+	Game game;
 
-    int windowW = 640;
-    int windowH = 480;
-    int squareS = 100;
-    int frameRate;
+	int windowW = 640;
+	int windowH = 480;
+	int squareS = 100;
+	int frameRate;
 
-    //std::cout << "Enter width of window: ";
-    //std::cin >> windowW;
+	//std::cout << "Enter width of window: ";
+	//std::cin >> windowW;
 
-    //std::cout << "Enter height of window: ";
-    //std::cin >> windowH;
+	//std::cout << "Enter height of window: ";
+	//std::cin >> windowH;
 
-    //std::cout << "Enter size of square: ";
-    //std::cin >> squareS;
-    
-    std::cout << "0 for maximum avalible frames per second" << std::endl;
-    std::cout << "Enter frame rate: ";
-    std::cin >> frameRate;
+	//std::cout << "Enter size of square: ";
+	//std::cin >> squareS;
+
+	while (true)
+	{
+		std::cout << "0 for maximum avalible frames per second" << std::endl;
+		std::cout << "Enter frame rate: ";
+		std::cin >> frameRate;
+		if (frameRate >= 0)
+		{
+			break;
+		}
+		else
+		{
+			std::cout << "Frame rate cannot be negative" << std::endl;
+			frameRate = NULL;
+		}
+	}
 
 
 
 
-    game.initParams(windowH, windowW, squareS, frameRate);
-    game.initWindow();
-    game.initEnemies();
-    // Game Loop
+	game.initParams(windowH, windowW, squareS, frameRate);
+	game.initWindow();
+	game.initEnemies();
+	// Game Loop
 
 
-    while (game.running())
-    {
-        //update
+	while (game.running())
+	{
+		//update
 
-        game.update();
-        //render
+		game.update();
+		//render
 
-        game.render();   
-    }
+		game.render();
+	}
 
-   
-    return 0;
+
+	return 0;
 }
